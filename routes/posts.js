@@ -83,7 +83,10 @@ router.put("/:_postId", async (req, res) => {
                     content,
                 }
             );
-            return res.status(204).json({ message: "게시글을 수정하였습니다." }); // message  가 뜨지 않은 이유는 무엇인가???
+            return res.status(204).json({ message: "게시글을 수정하였습니다." }); 
+            // ? message  가 뜨지 않은 이유는 무엇인가???
+            // ! http status code 를 204 로 설정했기 때문에 실행은 되지만 message 부분은 출력되지 않습니다.
+            
         } else {
             return res.status(401).json({ message: "비밀번호가 일치하지 않습니다." });
         }

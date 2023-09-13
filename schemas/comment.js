@@ -25,4 +25,4 @@ commentSchema.virtual("postId").get(function () { // _id를 userId로 "명칭"�
     return this._id.toHexString();
 });
 
-export default mongoose.model('comment', commentSchema);
+export default mongoose.model('Comment', commentSchema); 

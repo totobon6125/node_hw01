@@ -1,5 +1,4 @@
 import express from 'express';
-import mongoose from 'mongoose';
 import comment from '../schemas/comment.js';
 
 // Express.js의 라우터를 생성합니다.
@@ -7,7 +6,6 @@ const router = express.Router();
 
 // 댓글 생성 API : POST
 router.post("/:postId/comments", async (req, res) => {
-
     try {
         const { postId } = req.params
         const { user, password, content } = req.body
@@ -54,6 +52,7 @@ router.get("/:postId/comments", async (req, res) => {
 router.put("/:postId/comments/:_commentId", async (req, res) => {
     try {
         const commentId = req.params
+        console.log(commentId)
         const existingComment = await comment.findById(commentId._commentId)
         
         if(!existingComment) {
